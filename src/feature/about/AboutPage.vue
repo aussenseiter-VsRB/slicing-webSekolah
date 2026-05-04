@@ -84,7 +84,7 @@
   content: '&#10003;';
   position: absolute;
   left: 0;
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--vt-c-blue);
   font-weight: bold;
 }
 

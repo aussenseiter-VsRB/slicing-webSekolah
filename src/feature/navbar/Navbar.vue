@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import { RouterLink, useRoute } from 'vue-router'
+import AppButton from '@/components/AppButton.vue'
 
 const route = useRoute()
 const menuOpen = ref(false)
@@ -29,12 +30,6 @@ function closeMenu() {
         <span class="brand-text">Sekolah</span>
       </RouterLink>
 
-      <button class="menu-toggle" :class="{ active: menuOpen }" @click="toggleMenu" aria-label="Toggle menu">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-
       <ul class="nav-menu" :class="{ active: menuOpen }">
         <li v-for="link in navLinks" :key="link.path" class="nav-item">
           <RouterLink
@@ -47,6 +42,17 @@ function closeMenu() {
           </RouterLink>
         </li>
       </ul>
+
+      <div class="navbar-actions">
+        <AppButton variant="outline">Login</AppButton>
+        <AppButton variant="primary">Register</AppButton>
+      </div>
+
+      <button class="menu-toggle" :class="{ active: menuOpen }" @click="toggleMenu" aria-label="Toggle menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </nav>
 </template>
@@ -62,12 +68,12 @@ function closeMenu() {
 }
 
 .navbar-container {
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 }
 
 .navbar-brand {
@@ -79,10 +85,11 @@ function closeMenu() {
   font-weight: 700;
   font-size: 1.5rem;
   transition: color 0.3s ease;
+  flex-shrink: 0;
 }
 
 .navbar-brand:hover {
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--vt-c-blue);
 }
 
 .brand-icon {
@@ -95,6 +102,8 @@ function closeMenu() {
   gap: 2rem;
   margin: 0;
   padding: 0;
+  justify-content: center;
+  flex: 1;
 }
 
 .nav-link {
@@ -113,18 +122,24 @@ function closeMenu() {
   left: 0;
   width: 0;
   height: 2px;
-  background: hsla(160, 100%, 37%, 1);
+  background: var(--vt-c-blue);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--vt-c-blue);
 }
 
 .nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
 }
 
 .menu-toggle {
@@ -163,6 +178,10 @@ function closeMenu() {
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
+  }
+
+  .navbar-actions {
+    display: none;
   }
 
   .nav-menu {

@@ -145,13 +145,13 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: hsla(160, 100%, 37%, 1);
+  border-color: var(--vt-c-blue);
 }
 
 .btn-submit {
   width: 100%;
   padding: 1rem;
-  background: hsla(160, 100%, 37%, 1);
+  background: var(--vt-c-blue);
   color: white;
   border: none;
   border-radius: 8px;
@@ -162,7 +162,7 @@
 }
 
 .btn-submit:hover {
-  background: hsla(160, 100%, 30%, 1);
+  background: #2563eb;
 }
 
 @media (max-width: 768px) {

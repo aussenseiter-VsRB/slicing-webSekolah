@@ -74,12 +74,12 @@ import { RouterLink } from 'vue-router'
 }
 
 .btn-primary {
-  background: hsla(160, 100%, 37%, 1);
+  background: var(--vt-c-blue);
   color: white;
 }
 
 .btn-primary:hover {
-  background: hsla(160, 100%, 30%, 1);
+  background: #2563eb;
   transform: translateY(-2px);
 }
 
@@ -99,7 +99,7 @@ import { RouterLink } from 'vue-router'
 .stat-number {
   font-size: 2.5rem;
   font-weight: 800;
-  color: hsla(160, 100%, 37%, 1);
+  color: var(--vt-c-blue);
 }
 
 .stat-label {
