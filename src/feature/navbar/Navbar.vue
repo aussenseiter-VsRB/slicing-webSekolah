@@ -26,8 +26,8 @@ function closeMenu() {
   <nav class="navbar">
     <div class="navbar-container">
       <RouterLink to="/" class="navbar-brand" @click="closeMenu">
-        <span class="brand-icon">&#127891;</span>
-        <span class="brand-text">Sekolah</span>
+        <img src="@/assets/logo-yadika.png" alt="Yadika" class="brand-logo">
+        <span class="brand-text">SMK Yadika Soreang</span>
       </RouterLink>
 
       <ul class="nav-menu" :class="{ active: menuOpen }">
@@ -79,7 +79,7 @@ function closeMenu() {
 .navbar-brand {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   text-decoration: none;
   color: var(--color-heading);
   font-weight: 700;
@@ -92,8 +92,9 @@ function closeMenu() {
   color: var(--vt-c-blue);
 }
 
-.brand-icon {
-  font-size: 1.8rem;
+.brand-logo {
+  height: 32px;
+  width: auto;
 }
 
 .nav-menu {
